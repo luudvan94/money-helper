@@ -1,5 +1,5 @@
 {
-  "name": "RNFirebaseStarter",
+  "name": "MoneyHelper",
   "version": "5.4.0",
   "private": true,
   "scripts": {
@@ -14,7 +14,11 @@
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.9",
-    "react-native-firebase": "^5.5.4"
+    "react-native-firebase": "^5.5.4",
+    "react-native-gesture-handler": "^1.4.1",
+    "react-native-reanimated": "^1.2.0",
+    "react-navigation": "^4.0.0",
+    "react-navigation-tabs": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

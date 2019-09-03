@@ -107,7 +107,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.invertase.rnfirebasestarter"
+        applicationId "com.luuvan.moneyhelper"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

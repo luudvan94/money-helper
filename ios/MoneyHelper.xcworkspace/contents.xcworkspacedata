@@ -2,7 +2,10 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RNFirebaseStarter.xcodeproj">
+      location = "group:../../../../../Downloads/GoogleService-Info.plist">
+   </FileRef>
+   <FileRef
+      location = "group:MoneyHelper.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

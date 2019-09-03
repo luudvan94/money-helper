@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>966708393277-h9vs6i00af2c00mur1a5k54sinrpu2jk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.966708393277-h9vs6i00af2c00mur1a5k54sinrpu2jk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAX0Z7f7CSLtlvuruvPq6n6m3jo7vmslF4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>966708393277</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.invertase.MoneyHelper</string>
+	<key>PROJECT_ID</key>
+	<string>money-helper-4b0fb</string>
+	<key>STORAGE_BUCKET</key>
+	<string>money-helper-4b0fb.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:966708393277:ios:7f38a204d31611a36b8154</string>
+	<key>DATABASE_URL</key>
+	<string>https://money-helper-4b0fb.firebaseio.com</string>
+</dict>
+</plist>

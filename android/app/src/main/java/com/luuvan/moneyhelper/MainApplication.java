@@ -1,4 +1,4 @@
-package com.invertase.rnfirebasestarter;
+package com.luuvan.moneyhelper;
 
 import android.support.multidex.MultiDexApplication;
 
