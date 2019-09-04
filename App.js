@@ -1,31 +1,15 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import PaymentsScreen from './src/features/payments';
+import AddScreen from './src/features/add';
+import StatisticScreen from './src/features/statistic';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
-
-class HomeScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Home!</Text>
-      </View>
-    );
-  }
-}
-
-class SettingsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Settings!</Text>
-      </View>
-    );
-  }
-}
+import * as screenNames from './src/screen_names';
 
 const TabNavigator = createBottomTabNavigator({
-  Home: HomeScreen,
-  Settings: SettingsScreen,
+  [screenNames.payments]: PaymentsScreen,
+  [screenNames.add]: AddScreen,
+  [screenNames.statistic]: StatisticScreen
 });
 
 export default App = createAppContainer(TabNavigator);
