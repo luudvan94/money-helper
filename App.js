@@ -3,6 +3,7 @@ import { StyleSheet, Text } from 'react-native';
 import PaymentsScreen from './src/features/payments';
 import AddScreen from './src/features/add';
 import StatisticScreen from './src/features/statistic';
+import MoreScreen from './src/features/more';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import * as screenNames from './src/screen_names';
@@ -12,7 +13,8 @@ import { Color } from './src/styles';
 const TabNavigator = createBottomTabNavigator({
   [screenNames.payments]: PaymentsScreen,
   [screenNames.add]: AddScreen,
-  [screenNames.statistic]: StatisticScreen
+  [screenNames.statistic]: StatisticScreen,
+  [screenNames.more]: MoreScreen
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {
@@ -26,6 +28,8 @@ const TabNavigator = createBottomTabNavigator({
         iconName = `ios-add-circle`;
       } else if (routeName === screenNames.statistic) {
         iconName = `ios-stats`;
+      } else if (routeName === screenNames.more) {
+        iconName = `ios-more`;
       }
 
       return <IconComponent name={iconName} size={35} color={tintColor} />;
