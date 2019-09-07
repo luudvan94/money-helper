@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, Dimensions } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
-import { Color, Typography } from '../../styles';
+import { Color, Typography, Styles } from '../../styles';
 import TextButton from '../../components/button';
 import IconButton from '../../components/icon-button';
 
@@ -9,7 +9,7 @@ export default class AddWalletScreen extends React.Component {
 
     render() {
         return (
-            <SafeAreaView style={styles.container}>
+            <SafeAreaView style={Styles.container}>
                 <ScrollView bounces={false} contentContainerStyle={{justifyContent: 'flex-start', width: Dimensions.get('window').width-30}} style={styles.scrollView}>
                     <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'space-between', alignSelf: 'flex-end' }}>
                         <View style={{ flex: 1 }}>
@@ -22,14 +22,14 @@ export default class AddWalletScreen extends React.Component {
                         
                     </View>
                     <View style={{ paddingTop: 20 }}>
-                        <Text style={[Typography.darkMode, styles.header]}>add Wallet Screen</Text>
+                        <Text style={Styles.header}>add Wallet Screen</Text>
                     </View>
                     <View style={{ paddingTop: 30 }}>
-                        <Text style={[Typography.darkMode, styles.header]}>name</Text>
+                        <Text style={Styles.header}>name</Text>
                         <TextButton style={styles.button} title="add"/>
                     </View>
                     <View style={{ paddingTop: 30 }}>
-                        <Text style={[Typography.darkMode, styles.header]}>description</Text>
+                        <Text style={Styles.header}>description</Text>
                         <TextButton style={styles.button} title="add"/>
                     </View>
                     
@@ -42,18 +42,9 @@ export default class AddWalletScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: Color.DarkMode.BLACK_000000,
-        flex: 1,
-    },
     scrollView: {
         flex: 1,
         left: 20,
-    },
-
-    header: {
-        ...Typography.header,
-        ...Typography.big
     },
     content: {
         color: Color.DarkMode.WHITE_FFFFFF,

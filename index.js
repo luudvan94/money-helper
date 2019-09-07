@@ -4,7 +4,8 @@
 
 import {AppRegistry, View} from 'react-native';
 // import App from './App';
-import AddWalletScreen from './src/features/add_wallet';
+// import WelcomeScreen from './src/features/welcome';
+import MyApp from './src/features/chart';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => AddWalletScreen);
+AppRegistry.registerComponent(appName, () => MyApp);
