@@ -22,7 +22,7 @@ export default class WelcomeScreen extends React.Component {
                             <View style={{ flex: 1 }}>
                                 <TextButton style={{ color: Color.DarkMode.GREEN_1ABC9C }} title="my wallet"/>
                             </View>
-                            <View style={{ flex: 1, alignItems: 'flex-end' }}>
+                            <View style={{ flex: 1, alignItems: 'flex-end', marginRight: 10 }}>
                                 <IconButton name="ios-arrow-round-forward" size={70}/>
                             </View>
                         </View>
