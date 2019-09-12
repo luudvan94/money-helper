@@ -6,7 +6,7 @@ export default Typography = StyleSheet.create({
         color: Color.DarkMode.WHITE_FFFFFF
     },
     lightMode: {
-        color: Color.LightMode.WHITE_FFFFFF
+        color: Color.LightMode.BLACK_000000
     },
     big: {
         fontSize: 30,

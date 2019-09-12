@@ -1,15 +1,18 @@
 // source:  https://github.com/giacomocerquone/react-native-fab-pie
 
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
 import PieWrapper from './pie';
 import MyLabels from './pie/labels';
+import LabelDesciption from './pie/description';
+import { Color } from '../../styles';
 
 export default class MyApp extends React.PureComponent {
   constructor(props) {
     super(props);
-    const data = [50, 20, 4, 10];
-    const colors = ['A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA'];
+    const data = [50, 20, 4, 10, 12, 13 ,14, 15, 16, 17];
+    const colors = ['A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA', 'A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA', 'F5D6BA', 'ACC3A6'];
 
     const pieData = data
       .filter(value => value > 0)
@@ -32,18 +35,17 @@ export default class MyApp extends React.PureComponent {
     this.pie.current.animate();
   }
 
-  animate = () => {
-    this.pie.current.reset().then(this.pie.current.animate);
-  };
+  // animate = () => {
+  //   this.pie.current.reset().then(this.pie.current.animate);
+  // };
 
   pie = React.createRef();
 
   render() {
     return (
-      <View
+      <SafeAreaView
         style={{
-          marginVertical: 40,
-          marginHorizontal: 10,
+          backgroundColor: Color.DarkMode.BLACK_000000,
           justifyContent: 'center',
           alignItems: 'center',
           flex: 1,
@@ -54,30 +56,27 @@ export default class MyApp extends React.PureComponent {
             alignItems: 'center',
           }}
         >
-          <Text style={{ fontSize: 30 }}>React Native Fab Pie</Text>
+          <Text style={{ fontSize: 30, color: Color.DarkMode.WHITE_FFFFFF }}>React Native Fab Pie</Text>
           <Text>by Giacomo Cerquone</Text>
         </View>
         <PieWrapper
           ref={this.pie}
           containerStyle={{
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-            marginVertical: 20,
+            flexDirection: 'column',
           }}
           pieStyle={{
-            width: 260,
-            height: 260,
-            flex: 1,
+            backgroundColor: 'black',
+            flex: 0.45,
           }}
           outerRadius={120}
           innerRadius={45}
           data={this.state.pieData}
           animate
         >
+          <LabelDesciption />
           <MyLabels />
         </PieWrapper>
-        <Button title="animate" onPress={this.animate} />
-      </View>
+      </SafeAreaView>
     );
   }
 }

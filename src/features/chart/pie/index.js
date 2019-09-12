@@ -1,3 +1,5 @@
+// source:  https://github.com/giacomocerquone/react-native-fab-pie
+
 import React from 'react';
 import { View, Animated, Easing } from 'react-native';
 import PieChart from './pie';
@@ -37,8 +39,8 @@ export default class PieWrapper extends React.PureComponent {
     }).start(() => {
       this.setState({ indexToFocus });
       Animated.timing(this.state.outerElevation, {
-        toValue: 10,
-        duration: 200,
+        toValue: 15,
+        duration: 150,
         easing: Easing.inOut(Easing.quad),
       }).start();
     });
