@@ -8,7 +8,9 @@ import {AppRegistry, View} from 'react-native';
 // import MyApp from './src/features/chart';
 // import XAxisChart from './src/features/chart/bar_chart/bar_chart';
 // import BarChart from './src/features/chart/bar';
-import LineChart from './src/features/chart/line';
+// import LineChart from './src/features/chart/line';
+// import Pie from './src/features/chart/pie';
+import Stack from './src/features/chart/stack';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => LineChart);
+AppRegistry.registerComponent(appName, () => Stack);

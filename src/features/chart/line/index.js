@@ -5,7 +5,7 @@ import Slider from '@react-native-community/slider';
 import { View, Text, StyleSheet } from 'react-native';
 import { Color } from '../../../styles';
 
-export default class LineChart extends React.Component {
+export default class Line extends React.Component {
 
     constructor(props) {
         super(props);

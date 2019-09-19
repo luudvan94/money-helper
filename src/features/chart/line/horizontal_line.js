@@ -3,7 +3,7 @@ import {Text} from 'react-native';
 import { Line } from 'react-native-svg';
 
 export default HorizontalLine = (props) => {
-    const {y} = props;
+    const {y, color} = props;
     return (
         <Line
             key={ 'zero-axis' }
@@ -11,7 +11,7 @@ export default HorizontalLine = (props) => {
             x2={ '100%' }
             y1={ props.y }
             y2={ props.y }
-            stroke={ 'grey' }
+            stroke={ color }
             strokeDasharray={ [ 4, 8 ] }
             strokeWidth={ 2 }
         />

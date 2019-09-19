@@ -31,10 +31,6 @@ class ExtrasExample extends React.Component {
         }, duration);
     }
 
-    componentDidUpdate(props) {
-    this.changeData();
-    }
-
     render() {
 
         const { data, showToolTip } = this.state;
@@ -53,8 +49,8 @@ class ExtrasExample extends React.Component {
                     contentInset={{ top: 20, bottom: 20 }}
                     curve={ shape.curveLinear }
                 >
-                    <Grid/>
-                    {HorizontalLine({y: "20%"})}
+                    <Grid svg={{stroke: 'gray'}}/>
+                    {HorizontalLine({y: "50%", color: Color.DarkMode.GREEN_1ABC9C})}
                     <Tooltip data={data} index={this.props.index}/>
                 </LineChart>
             );
@@ -72,8 +68,7 @@ class ExtrasExample extends React.Component {
                     contentInset={{ top: 20, bottom: 20 }}
                     curve={ shape.curveLinear }
                 >
-                    <Grid/>
-                    {HorizontalLine({y: "20%"})}
+                    <Grid svg={{stroke: 'gray'}}/>
                 </LineChart>
             );
         }

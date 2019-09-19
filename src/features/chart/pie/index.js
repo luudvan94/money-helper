@@ -8,7 +8,7 @@ import MyLabels from './labels';
 import LabelDesciption from './description';
 import { Color } from '../../../styles';
 
-export default class MyApp extends React.PureComponent {
+export default class Pie extends React.PureComponent {
   constructor(props) {
     super(props);
     const data = [50, 20, 4, 10, 12, 13 ,14, 15, 16, 17];

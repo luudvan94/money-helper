@@ -38,7 +38,7 @@ export default Tooltip = ({ x, y, data, index, height }) => {
                 x1={ xCircle2 }
                 y1={ ycor } 
                 y2={ y(data[ index ]) }
-                stroke={ 'grey' }
+                stroke={ 'white' }
                 strokeWidth={ 2 }
             />
             <Circle
