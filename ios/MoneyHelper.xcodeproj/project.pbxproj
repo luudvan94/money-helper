@@ -43,6 +43,7 @@
 		49A8B397231F392000246C03 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8B394231F38EF00246C03 /* libRNReanimated.a */; };
 		49A8B3CF231F6FCD00246C03 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 49A8B3A6231F6FCD00246C03 /* Ionicons.ttf */; };
 		49A8B3D9231F704800246C03 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A8B3D6231F703A00246C03 /* libRNVectorIcons.a */; };
+		49ACB2FA232AAB9E00619F57 /* libRNCSlider.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 49ACB2F2232AAB9800619F57 /* libRNCSlider.a */; };
 		66F583A38C047519D1E18159 /* libPods-MoneyHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 599A1087F9C545123EFD61BE /* libPods-MoneyHelper.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8AEB10120B9847F8905B7DA1 /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C97DD56AE46E45398AF70E2E /* libRNFirebase.a */; };
@@ -354,6 +355,13 @@
 			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
 			remoteInfo = "RNVectorIcons-tvOS";
 		};
+		49ACB2F1232AAB9800619F57 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49ACB2C6232AAB9800619F57 /* RNCSlider.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 28C79A09220DC4CC0061DE82;
+			remoteInfo = RNCSlider;
+		};
 		5E9157321DD0AC6500FF2AA8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */;
@@ -421,6 +429,7 @@
 		49A8B368231F38EF00246C03 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
 		49A8B3A6231F6FCD00246C03 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		49A8B3D0231F703900246C03 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		49ACB2C6232AAB9800619F57 /* RNCSlider.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNCSlider.xcodeproj; path = "../node_modules/@react-native-community/slider/ios/RNCSlider.xcodeproj"; sourceTree = "<group>"; };
 		4A114661868ACFA83CCA60B3 /* libPods-MoneyHelper-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoneyHelper-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		599A1087F9C545123EFD61BE /* libPods-MoneyHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MoneyHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C04F7E60E3774814827066E /* Pods-MoneyHelper-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MoneyHelper-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MoneyHelper-tvOS/Pods-MoneyHelper-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -453,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
+				49ACB2FA232AAB9E00619F57 /* libRNCSlider.a in Frameworks */,
 				495C230B2323EBA300D1C8CF /* libART.a in Frameworks */,
 				49A8B3D9231F704800246C03 /* libRNVectorIcons.a in Frameworks */,
 				49A8B397231F392000246C03 /* libRNReanimated.a in Frameworks */,
@@ -698,6 +708,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		49ACB2C7232AAB9800619F57 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49ACB2F2232AAB9800619F57 /* libRNCSlider.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		5E91572E1DD0AC6500FF2AA8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -719,6 +737,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				49ACB2C6232AAB9800619F57 /* RNCSlider.xcodeproj */,
 				495C22D62323EB9900D1C8CF /* ART.xcodeproj */,
 				4957753A23234CB7005B3BC0 /* RNSVG.xcodeproj */,
 				49A8B3D0231F703900246C03 /* RNVectorIcons.xcodeproj */,
@@ -953,6 +972,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 49ACB2C7232AAB9800619F57 /* Products */;
+					ProjectRef = 49ACB2C6232AAB9800619F57 /* RNCSlider.xcodeproj */;
 				},
 				{
 					ProductGroup = 2759477A2261A42A00BA95C5 /* Products */;
@@ -1267,6 +1290,13 @@
 			fileType = archive.ar;
 			path = "libRNVectorIcons-tvOS.a";
 			remoteRef = 49A8B3D7231F703A00246C03 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		49ACB2F2232AAB9800619F57 /* libRNCSlider.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNCSlider.a;
+			remoteRef = 49ACB2F1232AAB9800619F57 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */ = {

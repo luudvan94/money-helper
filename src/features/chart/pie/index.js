@@ -1,91 +1,82 @@
 // source:  https://github.com/giacomocerquone/react-native-fab-pie
 
 import React from 'react';
-import { View, Animated, Easing } from 'react-native';
-import PieChart from './pie';
+import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-navigation';
+import PieWrapper from './wrapper';
+import MyLabels from './labels';
+import LabelDesciption from './description';
+import { Color } from '../../../styles';
 
-const AnimatedPie = Animated.createAnimatedComponent(PieChart);
+export default class MyApp extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    const data = [50, 20, 4, 10, 12, 13 ,14, 15, 16, 17];
+    const colors = ['A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA', 'A40E4C', '2C2C54', 'ACC3A6', 'F5D6BA', 'F5D6BA', 'ACC3A6'];
 
-export default class PieWrapper extends React.PureComponent {
-  state = {
-    endAngle: new Animated.Value(0),
-    outerElevation: new Animated.Value(0),
-    indexToFocus: null,
-  };
+    const pieData = data
+      .filter(value => value > 0)
+      .map((value, index) => {
+        const toRet = {
+          value,
+          title: `title-${index}`,
+          color: `#${colors[index]}`,
+          key: `pie-${index}`,
+        };
+        return toRet;
+      });
 
-  reset = () =>
-    new Promise(resolve => {
-      Animated.timing(this.state.endAngle, {
-        toValue: 0,
-        duration: 1000,
-        easing: Easing.inOut(Easing.quad),
-      }).start(() => resolve());
-    });
+    this.state = {
+      pieData,
+    };
+  }
 
-  animate = () =>
-    new Promise(resolve => {
-      Animated.timing(this.state.endAngle, {
-        toValue: 2,
-        duration: 1000,
-        easing: Easing.inOut(Easing.quad),
-      }).start(() => resolve());
-    });
+  componentDidMount() {
+    this.pie.current.animate();
+  }
 
-  focus = indexToFocus => {
-    Animated.timing(this.state.outerElevation, {
-      toValue: 0,
-      duration: 200,
-      easing: Easing.inOut(Easing.quad),
-    }).start(() => {
-      this.setState({ indexToFocus });
-      Animated.timing(this.state.outerElevation, {
-        toValue: 15,
-        duration: 150,
-        easing: Easing.inOut(Easing.quad),
-      }).start();
-    });
-  };
+  // animate = () => {
+  //   this.pie.current.reset().then(this.pie.current.animate);
+  // };
+
+  pie = React.createRef();
 
   render() {
-    const {
-      data,
-      innerRadius,
-      outerRadius,
-      padAngle,
-      pieStyle,
-      containerStyle,
-      children,
-      startAngle,
-      valueAccessor,
-      sort,
-      animate,
-    } = this.props;
-    const { outerElevation, indexToFocus, endAngle } = this.state;
-
-    const animEndAngle = endAngle ? Animated.multiply(endAngle, Math.PI) : 0;
-
     return (
-      <View style={containerStyle}>
-        <AnimatedPie
-          pieStyle={pieStyle}
-          outerRadius={outerRadius}
-          innerRadius={innerRadius}
-          startAngle={startAngle}
-          endAngle={animEndAngle}
-          padAngle={padAngle}
-          valueAccessor={valueAccessor}
-          sort={sort}
-          animate={animate}
-          elevation={outerElevation}
-          indexToFocus={indexToFocus}
-          data={data}
-        />
-        {React.Children.map(
-          children,
-          child =>
-            child && React.cloneElement(child, { focus: this.focus, data }),
-        )}
-      </View>
+      <SafeAreaView
+        style={{
+          backgroundColor: Color.DarkMode.BLACK_000000,
+          justifyContent: 'center',
+          alignItems: 'center',
+          flex: 1,
+        }}
+      >
+        <View
+          style={{
+            alignItems: 'center',
+          }}
+        >
+          <Text style={{ fontSize: 30, color: Color.DarkMode.WHITE_FFFFFF }}>React Native Fab Pie</Text>
+          <Text>by Giacomo Cerquone</Text>
+        </View>
+        <PieWrapper
+          ref={this.pie}
+          containerStyle={{
+            flexDirection: 'column',
+          }}
+          pieStyle={{
+            backgroundColor: 'black',
+            flex: 0.45,
+          }}
+          outerRadius={120}
+          innerRadius={45}
+          data={this.state.pieData}
+          animate
+        >
+          <LabelDesciption />
+          <MyLabels />
+        </PieWrapper>
+      </SafeAreaView>
     );
   }
 }

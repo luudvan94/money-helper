@@ -25,6 +25,8 @@ target 'MoneyHelper' do
 
   pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
 
+  pod 'react-native-slider', :path => '../node_modules/@react-native-community/slider'
+
 end
 
 target 'MoneyHelper-tvOS' do
