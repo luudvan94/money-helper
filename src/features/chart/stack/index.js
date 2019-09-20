@@ -10,8 +10,36 @@ export default class Stack extends React.Component {
         super(props);
 
         this.state = {
-            data: [ 50, 10, 40, 95, -4, -24, 85, 91, 35, 53, -53, 24],
-            index: 0
+            data : [
+                {
+                    month: new Date(2015, 0, 1),
+                    apples: 0,
+                    bananas: 0,
+                    cherries: 0,
+                    dates: 0,
+                },
+                {
+                    month: new Date(2015, 1, 1),
+                    apples: 0,
+                    bananas: 0,
+                    cherries: 0,
+                    dates: 0,
+                },
+                {
+                    month: new Date(2015, 2, 1),
+                    apples: 0,
+                    bananas: 0,
+                    cherries: 0,
+                    dates: 0,
+                },
+                {
+                    month: new Date(2015, 3, 1),
+                    apples: 0,
+                    bananas: 0,
+                    cherries: 0,
+                    dates: 0,
+                },
+            ]
         }
 
         this.onValueChange = this.onValueChange.bind(this);
@@ -20,7 +48,7 @@ export default class Stack extends React.Component {
     onValueChange = (value) => {
         this.setState({index: value});
     }
-    
+
     render() {
         return (
             <SafeAreaView style={{ flex: 1, backgroundColor: Color.DarkMode.BLACK_000000}}>
