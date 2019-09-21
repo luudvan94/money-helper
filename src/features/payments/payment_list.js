@@ -6,12 +6,16 @@ import Payment from './payment';
 
 export default class PaymentList extends React.Component {
 
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 
                 <View style={styles.topBar}>
-                    <TouchableOpacity style={styles.trigger}>
+                    <TouchableOpacity style={styles.trigger} onPress={this.props.onBarClick}>
                         <Text style={styles.title}>recent</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.filter}>
@@ -21,7 +25,7 @@ export default class PaymentList extends React.Component {
 
                 <View style={styles.list}>
                     <FlatList 
-                    data={[1,2,3,4,5,6,7]}
+                    data={[{'key': '1', 'v': 1},{'key': '2', 'v': 1},{'key': '3', 'v': 1},{'key': '4', 'v': 1},{'key': '5', 'v': 1}]}
                     renderItem={(item) => {return <Payment />}}
                     ItemSeparatorComponent={() => {return <View style={styles.separator} />}}
                     />
@@ -40,7 +44,8 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
     },
     topBar: {
-        flex: 1,
+        // flex: 1,
+        height: 60,
         flexDirection: 'row',
         marginTop: 10
     },
