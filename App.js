@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text } from 'react-native';
 import PaymentsScreen from './src/features/payments';
-import AddScreen from './src/features/add';
+import AddPayment from './src/features/add_payment';
 import StatisticScreen from './src/features/statistic';
-import MoreScreen from './src/features/more';
+import Setting from './src/features/setting';
 import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import * as screenNames from './src/screen_names';
@@ -12,9 +12,9 @@ import { Color } from './src/styles';
 
 const TabNavigator = createBottomTabNavigator({
   [screenNames.payments]: PaymentsScreen,
-  [screenNames.add]: AddScreen,
+  [screenNames.add]: AddPayment,
   [screenNames.statistic]: StatisticScreen,
-  [screenNames.more]: MoreScreen
+  [screenNames.more]: Setting
 }, {
   defaultNavigationOptions: ({ navigation }) => ({
     tabBarIcon: ({ focused, horizontal, tintColor }) => {

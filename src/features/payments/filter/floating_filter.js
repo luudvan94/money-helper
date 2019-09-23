@@ -3,17 +3,28 @@ import { View, Text, StyleSheet } from 'react-native';
 import TextFilter from './text_button';
 import { Color, Typography } from '../../../styles';
 
-export default class YearFilter extends React.Component {
+export default class FloatingFilter extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
 
     render() {
+
+        const { data, title,  onItemPressed = {} } = this.props;
+        
+        const dataComponent = data.map(item => { 
+            return (
+                <TextFilter style={styles.filter} text={item} />);
+        });
+
         return(
             <View>
                 <View style={styles.headerContainer}>
-                    <Text style={styles.header}>by year</Text>
+                    <Text style={styles.header}>{title}</Text>
                 </View>
                 <View style={styles.container}>
-                    <TextFilter style={styles.filter} text="2019" />
-                    <TextFilter style={styles.filter} text="2020" />
+                    {dataComponent}
                 </View>
             </View>
         );
@@ -26,7 +37,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 21
     },
     header: {
-        color: Color.DarkMode.WHITE_FFFFFF,
+        color: Color.DarkMode.GRAY_C6C6C6,
         ...Typography.medium
     },
     container: {

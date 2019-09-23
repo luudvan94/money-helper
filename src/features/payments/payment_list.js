@@ -18,7 +18,7 @@ export default class PaymentList extends React.Component {
                     <TouchableOpacity style={styles.trigger} onPress={this.props.onBarClick}>
                         <Text style={styles.title}>recent</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.filter}>
+                    <TouchableOpacity style={styles.filter} onPress={this.props.onFilterClick}>
                         <Ionicons name="ios-color-filter" size={40} color={Color.DarkMode.GREEN_1ABC9C}/>
                     </TouchableOpacity>
                 </View>
