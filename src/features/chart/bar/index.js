@@ -39,6 +39,7 @@ export default class Bar extends React.Component {
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 20, justifyContent: 'center' }}>
                 <Slider
+                    style={{ marginBottom: 50 }}
                     minimumValue={1}
                     maximumValue={this.state.data.length}
                     thumbTintColor={Color.DarkMode.GREEN_1ABC9C}

@@ -34,6 +34,7 @@ export default class Line extends React.Component {
                 </View>
                 <View style={{ flex: 1, paddingHorizontal: 20, justifyContent: 'center' }}>
                 <Slider
+                    style={{ marginBottom: 50 }}
                     minimumValue={0}
                     maximumValue={this.state.data.length - 1}
                     thumbTintColor={Color.DarkMode.GREEN_1ABC9C}
