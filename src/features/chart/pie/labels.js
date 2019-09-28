@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Text, StyleSheet, View, TouchableOpacity, FlatList } from 'react-native';
-import { Color, Typography } from '../../../styles';
+import { Color, Typography, Scaling } from '../../../styles';
 
 export default function MyLabels({ data, focus }) {
   return <View style={styles.container}>
@@ -15,7 +15,7 @@ export default function MyLabels({ data, focus }) {
                     style={{
                       flexDirection: 'row',
                       alignItems: 'center',
-                      justifyContent: 'flex-start',
+                      justifyContent: 'center',
                     }}
                   >
                     <View style={[styles.dot, { backgroundColor: item.color }]} />
@@ -32,8 +32,8 @@ export default function MyLabels({ data, focus }) {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'column',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
+    justifyContent: 'center',
+    alignItems: 'center',
     flex: 0.35,
   },
   listItem: {
@@ -41,14 +41,14 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch'
   },
   item: {
-    marginVertical: 10,
-    marginRight: 10,
+    marginVertical: Scaling.verticalScale(10),
+    marginRight: Scaling.scale(10),
   },
   dot: {
-    width: 22,
-    height: 22,
-    borderRadius: 11,
-    marginHorizontal: 10,
+    width: Scaling.scale(22),
+    height: Scaling.verticalScale(22),
+    borderRadius: Scaling.moderateScale(11),
+    marginHorizontal: Scaling.scale(10),
   },
   text: {
     color: Color.DarkMode.WHITE_FFFFFF,

@@ -4,10 +4,10 @@ import { Typography } from '../styles';
 
 
 export default TextButton = (props) => {
-    const { title, style = {}} = props;
+    const { title, style = {}, onPress = {}} = props;
 
     return (
-        <TouchableOpacity style={[ styles.container]}>
+        <TouchableOpacity style={[ styles.container]} onPress={() => onPress()}>
             <Text style={[ Typography.big, Typography.darkMode, style ]}>{title}</Text>
         </TouchableOpacity>
     );

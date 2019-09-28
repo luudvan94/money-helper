@@ -1,11 +1,12 @@
 
-import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Dimensions, Platform } from 'react-native';
 import {SafeAreaView} from 'react-navigation';
 import React from 'react';
 import SearchBar from './search_bar';
 import PaymentList from './payment_list';
 import SearchingHistory from './search_history';
 import Filter from './filter';
+import { Styles, Scaling } from '../../styles';
 
 export default class PaymentsScreen extends React.Component {
 
@@ -51,7 +52,7 @@ export default class PaymentsScreen extends React.Component {
         />);
 
         return (
-            <SafeAreaView style={{ backgroundColor: 'black', flex: 1 }}>
+            <SafeAreaView style={styles.container}>
                 <SearchBar style={{ flex: 1 }}/>
 
                 <View style={{ flex: 9 }}>
@@ -70,16 +71,19 @@ export default class PaymentsScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        marginBottom: Scaling.moderateScale(20),
+        ...Styles.androidSafeArea
+    },
     filter: {
         position: 'absolute',
         top: 0,
         right: 0,
         left: 0,
-        bottom:0
+        bottom:Scaling.verticalScale(80)
     },
     visible_paymentList: {
         position: 'absolute',
-        // top: Dimensions.get("window").height - 270,
         top: 0,
         right: 0,
         left: 0,
@@ -87,9 +91,9 @@ const styles = StyleSheet.create({
     },
     invisible_paymentList: {
         position: 'absolute',
-        top: Dimensions.get("window").height - 270,
+        top: Platform.OS === "android" ? Dimensions.get("window").height*0.9 - Scaling.verticalScale(80 + 60) : Dimensions.get("window").height*0.9 - Scaling.verticalScale(80 + 60+ 40) ,
         right: 0,
         left: 0,
-        bottom:0
+        // bottom:0
     }
 })

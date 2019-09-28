@@ -1,22 +1,16 @@
 import { StyleSheet } from 'react-native';
-import { Color } from './index';
+// import { Color, Scaling } from './index';
+import Scaling from './scaling';
 
 export default Typography = StyleSheet.create({
-    darkMode: {
-        color: Color.DarkMode.WHITE_FFFFFF
-    },
-    lightMode: {
-        color: Color.LightMode.BLACK_000000
-    },
     big: {
-        fontSize: 30,
-        fontWeight: 'bold', 
+        fontSize: Scaling.moderateScale(22),
     },
     medium: {
-        fontSize: 20,
+        fontSize: Scaling.moderateScale(18),
     },
     small: {
-        fontSize: 15
+        fontSize: Scaling.moderateScale(14)
     },
     header: {
         fontWeight: 'bold'

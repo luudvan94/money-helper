@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import TextFilter from './text_button';
-import { Color, Typography } from '../../../styles';
+import TextButtonFilter from './text_button';
+import { Color, Typography, Scaling } from '../../../styles';
 
 export default class FloatingFilter extends React.Component {
 
@@ -15,7 +15,7 @@ export default class FloatingFilter extends React.Component {
         
         const dataComponent = data.map(item => { 
             return (
-                <TextFilter style={styles.filter} text={item} />);
+                <TextButtonFilter style={styles.filter} text={item} />);
         });
 
         return(
@@ -33,8 +33,8 @@ export default class FloatingFilter extends React.Component {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        marginVertical: 10,
-        paddingHorizontal: 21
+        marginVertical: Scaling.verticalScale(10),
+        paddingHorizontal: Scaling.scale(20)
     },
     header: {
         color: Color.DarkMode.GRAY_C6C6C6,
@@ -44,10 +44,10 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start', 
         flexDirection: 'row', 
         flexWrap: 'wrap',
-        paddingHorizontal: 20
+        paddingHorizontal: Scaling.scale(20)
     },
     filter: {
-        marginHorizontal: 2,
-        marginVertical: 2
+        marginHorizontal: Scaling.scale(2),
+        marginVertical: Scaling.verticalScale(2)
     }
 })

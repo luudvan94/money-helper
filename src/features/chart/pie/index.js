@@ -1,12 +1,12 @@
 // source:  https://github.com/giacomocerquone/react-native-fab-pie
 
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-navigation';
 import PieWrapper from './wrapper';
 import MyLabels from './labels';
 import LabelDesciption from './description';
-import { Color } from '../../../styles';
+import { Color, Scaling, Styles, Typography } from '../../../styles';
 
 export default class Pie extends React.PureComponent {
   constructor(props) {
@@ -35,29 +35,16 @@ export default class Pie extends React.PureComponent {
     this.pie.current.animate();
   }
 
-  // animate = () => {
-  //   this.pie.current.reset().then(this.pie.current.animate);
-  // };
-
   pie = React.createRef();
 
   render() {
     return (
-      <SafeAreaView
-        style={{
-          backgroundColor: Color.DarkMode.BLACK_000000,
-          justifyContent: 'center',
-          alignItems: 'center',
-          flex: 1,
-        }}
-      >
+      <SafeAreaView style={styles.container}>
         <View
-          style={{
-            alignItems: 'center',
-          }}
+          style={{ alignItems: 'center' }}
         >
-          <Text style={{ fontSize: 30, color: Color.DarkMode.WHITE_FFFFFF }}>React Native Fab Pie</Text>
-          <Text>by Giacomo Cerquone</Text>
+          <Text style={[styles.header, styles.text]}>React Native Fab Pie</Text>
+          <Text style={styles.text}>by Giacomo Cerquone</Text>
         </View>
         <PieWrapper
           ref={this.pie}
@@ -67,16 +54,33 @@ export default class Pie extends React.PureComponent {
           pieStyle={{
             backgroundColor: 'black',
             flex: 0.45,
+            width: Scaling.verticalScale(300)
           }}
           outerRadius={120}
           innerRadius={45}
-          data={this.state.pieData}
+          data={this.state.pieData} 
           animate
         >
           <LabelDesciption />
-          <MyLabels />
+          <MyLabels style={{ alignSelf: 'center' }}/>
         </PieWrapper>
       </SafeAreaView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: Color.DarkMode.BLACK_000000,
+    justifyContent: 'center',
+    alignItems: 'center',
+    flex: 10,
+  },
+  text: {
+    color: Color.DarkMode.WHITE_FFFFFF
+  },
+  header: {
+    ...Typography.big,
+    color: Color.DarkMode.WHITE_FFFFFF
+  }
+})

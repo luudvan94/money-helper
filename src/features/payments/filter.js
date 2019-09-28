@@ -6,7 +6,7 @@ export default class Filter extends React.Component {
 
     render() {
         return (
-            <View style={{ flex: 1}}>
+            <View style={{ flex: 10}}>
                 <ScrollView>
                     <FloatingFilter title="by category" data={['market', 'stacbuck', 'birthday', 'gambling']} />
                     <FloatingFilter title="by price or below" data={['50', '100', '120', '200', 'more']} />

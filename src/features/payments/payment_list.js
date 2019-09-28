@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Text, FlatList } from 'react-native';
-import { Color, Typography } from '../../styles';
+import { Color, Typography, Scaling } from '../../styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Payment from './payment';
 
@@ -39,15 +39,15 @@ const styles = StyleSheet.create({
     container: {
         flex: 10,
         backgroundColor: Color.DarkMode.GRAY_131212,
-        borderTopLeftRadius: 35,
-        borderTopRightRadius: 35,
-        paddingHorizontal: 20,
+        borderTopLeftRadius: Scaling.moderateScale(35),
+        borderTopRightRadius: Scaling.moderateScale(35),
+        paddingHorizontal: Scaling.scale(20),
     },
     topBar: {
         // flex: 1,
-        height: 60,
+        height: Scaling.verticalScale(60),
         flexDirection: 'row',
-        marginTop: 10
+        marginTop: Scaling.verticalScale(10)
     },
     trigger: {
         flex: 8,
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     },
     title: {
         color: Color.DarkMode.GREEN_1ABC9C,
-        ...Typography.big,
+        ...Typography.big
     },
     filter: {
         flex: 2,
@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
     },
     list: {
         flex: 9,
-        paddingBottom: 40
+        paddingBottom: Scaling.verticalScale(10)
     },
     separator: {
-        height: 33
+        height: Scaling.verticalScale(33)
     }
 });

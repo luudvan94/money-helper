@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Color, Typography } from '../../styles';
+import { Color, Typography, Scaling } from '../../styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class Payment extends React.Component {
@@ -8,7 +8,7 @@ export default class Payment extends React.Component {
         return (
             <View style={styles.container}>
                 <View style={styles.icon}>
-                    <Ionicons name="ios-beer" size={40} color={Color.DarkMode.RED_E74C3C}/>
+                    <Ionicons name="ios-beer" size={Scaling.moderateScale(40)} color={Color.DarkMode.RED_E74C3C}/>
                 </View>
 
                 <View style={styles.detail}>
@@ -27,17 +27,17 @@ export default class Payment extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        height: 112,
-        borderRadius: 20,
-        padding: 10,
+        height: Scaling.verticalScale(120),
+        borderRadius: Scaling.moderateScale(20),
+        padding: Scaling.moderateScale(10),
         backgroundColor: Color.DarkMode.BLACK_000000
     },
     icon: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingLeft: 10,
-        paddingRight: 20
+        paddingLeft: Scaling.scale(10),
+        paddingRight: Scaling.scale(20)
     },
     detail: {
         flex: 5,
@@ -46,12 +46,11 @@ const styles = StyleSheet.create({
     },
     name: {
         ...Typography.medium,
-        ...Typography.header,
         color: Color.DarkMode.WHITE_FFFFFF,
 
     },  
     date: {
-        ...Typography.smallm,
+        ...Typography.small,
         color: Color.DarkMode.GRAY_C6C6C6,
     },
     description: {

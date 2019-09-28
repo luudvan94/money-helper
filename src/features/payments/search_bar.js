@@ -1,6 +1,6 @@
 import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { Color } from '../../styles';
+import { Color, Scaling, Typography } from '../../styles';
 import { View, TextInput, StyleSheet } from 'react-native';
 
 export default class SearchBar extends React.Component {
@@ -14,12 +14,12 @@ export default class SearchBar extends React.Component {
     render () {
         
         return (
-            <View style={{ flex: 1, flexDirection: 'row', marginHorizontal: 10}}>
-                <View style={{ flex: 1, paddingTop: 6 }}>
-                    <Ionicons name="ios-search" size={40} color={Color.DarkMode.GREEN_1ABC9C}/>
+            <View style={{ flex: 1, flexDirection: 'row', marginHorizontal: Scaling.scale(6)}}>
+                <View style={{ flex: 1, paddingTop: Scaling.scale(6) }}>
+                    <Ionicons name="ios-search" size={Scaling.moderateScale(40)} color={Color.DarkMode.GREEN_1ABC9C}/>
                 </View>
 
-                <View style={{ flex: 9, flexDirection: 'column', height: 40, justifyContent: 'center' }}>
+                <View style={{ flex: 9, flexDirection: 'column', height: Scaling.verticalScale(40), justifyContent: 'center' }}>
                 <TextInput
                     style={styles.textInput}
                     onChangeText={text => this.setState({ searchText: text })}
@@ -35,10 +35,10 @@ export default class SearchBar extends React.Component {
 
 const styles = StyleSheet.create({
     textInput: {
-        height: 40, 
+        height: Scaling.verticalScale(40) , 
         borderColor: Color.DarkMode.GREEN_1ABC9C, 
-        borderBottomWidth: 1, 
+        borderBottomWidth: Scaling.scale(1), 
         color: Color.DarkMode.WHITE_FFFFFF, 
-        fontSize: 22
+        ...Typography.medium
     }
 });

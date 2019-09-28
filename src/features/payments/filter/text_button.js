@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { Color, Typography } from '../../../styles';
+import { Color, Typography, Scaling } from '../../../styles';
 import { StyleSheet } from 'react-native';
 
 export default class TextButtonFilter extends React.Component  {
@@ -40,16 +40,16 @@ const styles = StyleSheet.create({
     container: { 
         justifyContent: 'center', 
         backgroundColor: Color.DarkMode.DARK_GREEN0A5345,
-        borderRadius: 18,
-        height: 36,
-        paddingHorizontal: 10,
+        borderRadius: Scaling.moderateScale(18),
+        height: Scaling.verticalScale(36),
+        paddingHorizontal: Scaling.scale(10),
     },
     containerClicked: {
         justifyContent: 'center', 
         backgroundColor: Color.DarkMode.GREEN_1ABC9C,
-        borderRadius: 18,
-        height: 36,
-        paddingHorizontal: 10,
+        borderRadius: Scaling.moderateScale(18),
+        height: Scaling.moderateScale(36),
+        paddingHorizontal: Scaling.scale(10),
     },
     item: { 
         color: Color.DarkMode.GRAY_C6C6C6, 

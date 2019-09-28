@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView } from 'react-navigation';
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
-import { Color, Typography, Styles } from '../../styles';
+import { Color, Typography, Styles, Scaling } from '../../styles';
 import IconButton from '../../components/icon-button';
 import TextButton from '../../components/button';
 
@@ -25,35 +25,35 @@ export default class AddPayment extends React.Component {
 
                     <View style={styles.content}>
                         <View style={{ paddingTop: 20, flexDirection: 'row', alignItems: 'flex-end', justifyContent: 'space-between', alignSelf: 'flex-end' }}>
-                            <Text style={{ flex: 1, ...Styles.header }}>add payment</Text>
+                            <Text style={{ flex: 1, ...styles.text }}>add payment</Text>
                             {/* <IconButton style={{ flex: 1, alignItems: 'flex-end' }} name="ios-camera" size={50}/> */}
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>name</Text>
+                            <Text style={styles.text}>name</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>amount</Text>
+                            <Text style={styles.text}>amount</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>category</Text>
+                            <Text style={styles.text}>category</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>description</Text>
+                            <Text style={styles.text}>description</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>time</Text>
+                            <Text style={styles.text}>time</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>location</Text>
+                            <Text style={styles.text}>location</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                         <View style={{ paddingTop: 30 }}>
-                            <Text style={Styles.header}>photo</Text>
+                            <Text style={styles.text}>photo</Text>
                             <TextButton style={styles.button} title="add"/>
                         </View>
                     </View>
@@ -69,8 +69,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Color.DarkMode.BLACK_000000,
-        paddingHorizontal: 20,
-        paddingBottom: 30
+        paddingHorizontal: Scaling.verticalScale(20),
+        paddingBottom: Scaling.verticalScale(30),
+        ...Styles.androidSafeArea
     },
     scrollView: {
         flex: 1
@@ -81,12 +82,16 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between', 
         alignSelf: 'flex-end' 
     },
+    text: {
+        ...Typography.big,
+        color: Color.DarkMode.WHITE_FFFFFF
+    },  
     button: {
         color: Color.DarkMode.GREEN_1ABC9C
     },
     button_save: {
         color: Color.DarkMode.GREEN_1ABC9C,
-        fontSize: 20
+        ...Typography.big
     },
     button_done: {
         color: Color.DarkMode.RED_E74C3C
